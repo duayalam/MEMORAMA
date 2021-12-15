@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+:root{
+    --blue:#00e1ff;
+    --black:#000000;
+    --success:rgb(0, 47, 255);
+    --success50:rgba(0, 47, 255,1)
+}
+*{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold !important;
+}
+body{
+    background-color: var(--black) !important;
+    color: var(--blue) !important;
+}
+.container{
+ 
+}
+.ingreso{
+    margin: auto;
+    margin-top: 100px ;
+    width: 80%;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+.ingreso input{
+    text-align: center;
+    width: 300px;
+    height: 28px;
+    border: none;
+    background-color: var(--black);
+    border-bottom: 2px solid var(--blue);
+    color: white;
+    outline: none;
+
+}
+
+.ingreso button{
+    background-color: var(--black);
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    
+    border-radius: 10px;
+    
+}
+.ingreso button:hover{
+    background-color: var(--blue);
+    color: var(--black);
+    cursor: pointer;
+    
+}
+a{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+.ranking{
+    float: right;
+    margin-right: 20px;
+    display: inline-block;
+    position: fixed;
+}
+.ranking button{
+    
+    margin-right: 0px;
+}
+
+.ranking thead{
+    color: var(--blank) !important;
+    background-color: var(--blue);
+}
+.ranking tbody tr{
+    color: var(--blue);
+}

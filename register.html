@@ -1,0 +1,38 @@
+<form class="ingreso">
+    <h1>Memorama</h1>
+    <label>Registro</label><br>
+    <input type="text" name="nombre" placeholder="Ingrese su nombre"><br>
+    <input type="text" name="usuario" placeholder="Usuario de ingreso"><br>
+    <input type="password" name="clave"  placeholder="Contraseña"><br><br>
+    <button type="button" id="registrar" class="btn">Registrar</button><br>
+    <a type="button" id="login">Inicio de Sesion</a><br>
+    <div class="resp"></div>
+
+</form>
+
+<script>
+
+    function login(event){
+                if(event.keyCode == 13){
+                    $("#ingresar").click();
+                }
+            }
+    
+            $("#registrar").click(function(){
+                $.ajax({
+                    type:"POST",
+                    url:"register.php",
+                    data:$(".ingreso").serialize(),
+                    success:function(data){
+                        $(".resp").html(data);
+    
+                    },
+                    error:function(data){
+    
+                    }
+                })
+            })
+            $("#login").click(function(){
+                $(".container").load("login.html");
+            })
+    </script>

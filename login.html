@@ -1,0 +1,37 @@
+<form class="ingreso">
+    <h1>Memorama</h1>
+    <label>Inicio de sesion</label><br>
+    <input type="text" name="usuario" placeholder="Usuario"><br>
+    <input type="password" name="clave" onkeyup="login(event)" placeholder="Contraseña"><br><br>
+    <button type="button" id="ingresar" class="btn">Ingresar</button><br>
+    <a type="button" id="registrarusr">Registrate</a><br>
+    <div class="resp"></div>
+
+</form>
+
+<script>
+
+function login(event){
+            if(event.keyCode == 13){
+                $("#ingresar").click();
+            }
+        }
+
+        $("#ingresar").click(function(){
+            $.ajax({
+                type:"POST",
+                url:"validar.php",
+                data:$(".ingreso").serialize(),
+                success:function(data){
+                    $(".resp").html(data);
+
+                },
+                error:function(data){
+
+                }
+            })
+        })
+        $("#registrarusr").click(function(){
+            $(".container").load("register.html");
+        })
+</script>
